@@ -1,9 +1,14 @@
 import { createBrowserRouter, RouterProvider, Navigate } from 'react-router-dom';
-import Login from './pages/Login';
-import Home from './pages/Home';
-import Registration from './pages/Registration';
+import Login from './pages/Account/Login/Login';
+import Register from './pages/Account/Register/Register';
+import Layout from './components/Layout';
+import Home from './pages/Home/Home';
+import Network from './pages/Network/Network';
+import Jobs from './pages/Jobs/Jobs';
+import Messaging from './pages/Messaging/Messaging';
+import Notifications from './pages/Notifications/Notifications';
+import Profile from './pages/Profile/Profile';
 
-// Define routes
 const router = createBrowserRouter([
   {
     path: '/',
@@ -14,15 +19,40 @@ const router = createBrowserRouter([
     element: <Login />,
   },
   {
-    path: '/home',
-    element: <Home />,
-  },
-  {
     path: '/register',
-    element: <Registration />,
+    element: <Register />,
   },
   {
-    // Catch-all route - redirect to login for any undefined routes
+    path: '/',
+    element: <Layout />,
+    children: [
+      {
+        path: 'home',
+        element: <Home />,
+      },
+      {
+        path: 'network',
+        element: <Network />,
+      },
+      {
+        path: 'jobs',
+        element: <Jobs />,
+      },
+      {
+        path: 'messaging',
+        element: <Messaging />,
+      },
+      {
+        path: 'notifications',
+        element: <Notifications />,
+      },
+      {
+        path: 'profile',
+        element: <Profile />,
+      },
+    ]
+  },
+  {
     path: '*',
     element: <Navigate to="/login" replace />
   }

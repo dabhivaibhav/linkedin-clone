@@ -81,54 +81,15 @@ function Home() {
 
   return (
     <div className="home-container">
-      {/* Header */}
-      <header className="header">
-        <div className="header-content">
-          <div className="logo-search">
-            <div className="logo">NGN</div>
-            <div className="search-box">
-              <span className="nav-icon">🔍</span>
-              <input type="text" placeholder="Search" />
-            </div>
-          </div>
-          
-          <nav className="nav-menu">
-            <div className="nav-item active">
-              <span className="nav-icon">🏠</span>
-              <span>Home</span>
-            </div>
-            <div className="nav-item">
-              <span className="nav-icon">👥</span>
-              <span>Network</span>
-            </div>
-            <div className="nav-item">
-              <span className="nav-icon">💼</span>
-              <span>Jobs</span>
-            </div>
-            <div className="nav-item">
-              <span className="nav-icon">💬</span>
-              <span>Messaging</span>
-            </div>
-            <div className="nav-item">
-              <span className="nav-icon">🔔</span>
-              <span>Notifications</span>
-            </div>
-            <div className="nav-item">
-              <div className="profile-image"></div>
-              <span>Me</span>
-            </div>
-          </nav>
-        </div>
-      </header>
-      
-      {/* Main content */}
       <div className="main-content">
         {/* Left sidebar */}
         <aside className="left-sidebar">
           <div className="profile-card">
             <div className="profile-background"></div>
             <div className="profile-content">
-              <div className="profile-photo"></div>
+              <div className="profile-photo">
+                <img src={`https://picsum.photos/72/72?random=${Math.floor(Math.random() * 1000)}`} alt="Profile" />
+              </div>
               <h2 className="profile-name">Your Name</h2>
               <p className="profile-headline">Your Headline Here</p>
             </div>

@@ -1,0 +1,10 @@
+.profile-container {
+  padding: 20px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.profile-container h1 {
+  color: #0a66c2;
+  margin-bottom: 10px;
+}
