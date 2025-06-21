@@ -1,0 +1,237 @@
+.login-container {
+  min-height: 100vh;
+  background-color: #f3f2ef;
+  font-family: -apple-system, system-ui, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', 'Fira Sans', Ubuntu, Oxygen, 'Oxygen Sans', Cantarell, 'Droid Sans', 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Lucida Grande', Helvetica, Arial, sans-serif;
+}
+
+.login-header {
+  padding: 24px 0;
+  width: 100%;
+}
+
+.logo {
+  max-width: 1128px;
+  margin: auto;
+  padding: 0 20px;
+}
+
+.logo h1 {
+  color: #0a66c2;
+  font-size: 2.5rem;
+  font-weight: bold;
+  transition: color 0.3s ease;
+}
+
+.logo h1:hover {
+  color: #004182;
+}
+
+.login-main {
+  max-width: 400px;
+  margin: 0 auto;
+  padding: 24px 32px 32px;
+}
+
+.login-form-container {
+  background-color: white;
+  padding: 24px;
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  transition: box-shadow 0.3s ease;
+}
+
+.login-form-container:hover {
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+.login-form-container h2 {
+  font-size: 32px;
+  font-weight: 600;
+  margin-bottom: 12px;
+}
+
+.form-group {
+  margin-bottom: 12px;
+  position: relative;
+}
+
+.password-group {
+  position: relative;
+}
+
+input {
+  width: 100%;
+  padding: 12px;
+  border: 1px solid #00000099;
+  border-radius: 4px;
+  font-size: 16px;
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+input:focus {
+  outline: none;
+  border-color: #0a66c2;
+  box-shadow: 0 0 0 2px rgba(10, 102, 194, 0.2);
+}
+
+input.has-value {
+  border-color: #0a66c2;
+}
+
+.input-valid-icon {
+  position: absolute;
+  right: 12px;
+  top: 50%;
+  transform: translateY(-50%);
+  color: #0a66c2;
+}
+
+.toggle-password {
+  position: absolute;
+  right: 12px;
+  top: 50%;
+  transform: translateY(-50%);
+  background: none;
+  border: none;
+  color: #0a66c2;
+  cursor: pointer;
+  font-weight: 600;
+  font-size: 14px;
+}
+
+.toggle-password:hover {
+  color: #004182;
+}
+
+.forgot-password {
+  margin: 16px 0;
+}
+
+.forgot-password a {
+  color: #0a66c2;
+  font-weight: 600;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.forgot-password a:hover {
+  color: #004182;
+  text-decoration: underline;
+}
+
+.sign-in-button {
+  width: 100%;
+  padding: 16px;
+  background-color: #0a66c2;
+  color: white;
+  border: none;
+  border-radius: 24px;
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+  margin-bottom: 16px;
+  transition: background-color 0.3s ease, transform 0.1s ease;
+}
+
+.sign-in-button:hover {
+  background-color: #004182;
+}
+
+.sign-in-button:active {
+  transform: scale(0.98);
+}
+
+.sign-in-button.loading {
+  background-color: #7fb3e2;
+  cursor: not-allowed;
+}
+
+.divider {
+  text-align: center;
+  border-bottom: 1px solid #00000099;
+  line-height: 0.1em;
+  margin: 20px 0;
+}
+
+.divider span {
+  background: white;
+  padding: 0 10px;
+  color: rgba(0,0,0,0.6);
+}
+
+.google-sign-in,
+.apple-sign-in {
+  width: 100%;
+  padding: 12px;
+  margin: 8px 0;
+  border: 1px solid #00000099;
+  border-radius: 24px;
+  background-color: white;
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.1s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.google-sign-in:hover,
+.apple-sign-in:hover {
+  background-color: #f3f2ef;
+}
+
+.google-sign-in:active,
+.apple-sign-in:active {
+  transform: scale(0.98);
+}
+
+.btn-icon {
+  margin-right: 8px;
+  font-weight: bold;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  background-color: #f3f2ef;
+}
+
+.sign-up-prompt {
+  text-align: center;
+  margin-top: 32px;
+}
+
+.sign-up-prompt a {
+  color: #0a66c2;
+  font-weight: 600;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.sign-up-prompt a:hover {
+  color: #004182;
+  text-decoration: underline;
+}
+
+.error-message {
+  background-color: #fdf2f2;
+  color: #d32f2f;
+  padding: 12px;
+  border-radius: 4px;
+  margin-bottom: 16px;
+  border-left: 4px solid #d32f2f;
+  animation: fadeIn 0.3s ease;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
