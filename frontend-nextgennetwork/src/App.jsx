@@ -2,6 +2,7 @@ import { createBrowserRouter, RouterProvider, Navigate } from 'react-router-dom'
 import Login from './pages/Account/Login/Login';
 import Register from './pages/Account/Register/Register';
 import Layout from './components/Layout';
+import ProtectedRoute from './components/ProtectedRoute';
 import Home from './pages/Home/Home';
 import Network from './pages/Network/Network';
 import Jobs from './pages/Jobs/Jobs';
@@ -24,7 +25,11 @@ const router = createBrowserRouter([
   },
   {
     path: '/',
-    element: <Layout />,
+    element: (
+      <ProtectedRoute>
+        <Layout />
+      </ProtectedRoute>
+    ),
     children: [
       {
         path: 'home',

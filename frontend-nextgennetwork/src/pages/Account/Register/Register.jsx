@@ -1,5 +1,6 @@
 import { useState, useEffect } from 'react';
 import { useNavigate, Link } from 'react-router-dom';
+import { accountService } from '../../../services';
 import './Register.css';
 
 function Registration() {
@@ -167,15 +168,23 @@ function Registration() {
   }, [formData]);
   
   // Handle form submission
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
     
     if (validateForm()) {
       setIsLoading(true);
       
-      // Simulate API call
-      setTimeout(() => {
-        setIsLoading(false);
+      try {
+        await accountService.register({
+          firstName: formData.firstName,
+          lastName: formData.lastName,
+          email: formData.email,
+          password: formData.password,
+          birthdate: formData.birthdate,
+          phone: formData.phone,
+          location: formData.location
+        });
+        
         setToastMessage('Registration successful! Welcome to NextGenNetwork.');
         setToastType('success');
         setShowToast(true);
@@ -184,7 +193,13 @@ function Registration() {
         setTimeout(() => {
           navigate('/login');
         }, 2000);
-      }, 1500);
+      } catch (error) {
+        setToastMessage('Registration failed. Please try again.');
+        setToastType('error');
+        setShowToast(true);
+      } finally {
+        setIsLoading(false);
+      }
     }
   };
   
