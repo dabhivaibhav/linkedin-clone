@@ -10,18 +10,20 @@ import Messaging from './pages/Messaging/Messaging';
 import Notifications from './pages/Notifications/Notifications';
 import Profile from './pages/Profile/Profile';
 
+import { accountService } from './services';
+
 const router = createBrowserRouter([
   {
     path: '/',
-    element: <Navigate to="/login" replace />
+    element: <Navigate to={accountService.isAuthenticated() ? "/home" : "/login"} replace />
   },
   {
     path: '/login',
-    element: <Login />,
+    element: accountService.isAuthenticated() ? <Navigate to="/home" replace /> : <Login />,
   },
   {
     path: '/register',
-    element: <Register />,
+    element: accountService.isAuthenticated() ? <Navigate to="/home" replace /> : <Register />,
   },
   {
     path: '/',
