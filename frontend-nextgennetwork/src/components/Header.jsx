@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
+import { accountService } from '../services';
 import './Header.css';
 
 function Header() {
@@ -7,6 +8,7 @@ function Header() {
   const navigate = useNavigate();
   
   const handleLogout = () => {
+    accountService.logout();
     navigate('/login');
   };
   

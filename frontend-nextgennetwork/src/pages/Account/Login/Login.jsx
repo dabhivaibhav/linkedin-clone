@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import { useNavigate, Link } from 'react-router-dom';
+import { accountService } from '../../../services';
 import './Login.css';
 
 function Login() {
@@ -10,20 +11,19 @@ function Login() {
   const [error, setError] = useState('');
   const navigate = useNavigate();
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
     setError('');
     setIsLoading(true);
     
-    // Simulate API call
-    setTimeout(() => {
-      if (email === 'test@example.com' && password === 'password') {
-        navigate('/home');
-      } else {
-        setError('Invalid email or password');
-        setIsLoading(false);
-      }
-    }, 1000);
+    try {
+      await accountService.login({ email, password });
+      navigate('/home');
+    } catch (error) {
+      setError('Invalid email or password',error);
+    } finally {
+      setIsLoading(false);
+    }
   };
 
   const togglePasswordVisibility = () => {
