@@ -16,7 +16,8 @@ class AccountService {
     }
     
     const data = await response.json();
-    localStorage.setItem('token', data.token);
+    console.log('Login successful:', data);
+    localStorage.setItem('token', data.data.token);
     localStorage.setItem('user', JSON.stringify(data.user));
     return data;
   }

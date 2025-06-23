@@ -180,6 +180,7 @@ function Registration() {
           lastName: formData.lastName,
           email: formData.email,
           password: formData.password,
+          confirmPassword: formData.confirmPassword,
           birthdate: formData.birthdate,
           phone: formData.phone,
           location: formData.location
